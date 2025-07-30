@@ -1,0 +1,56 @@
+namespace Depi_S2_Day1
+{
+    
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Hello! Input the first number: ");
+            string input1 = Console.ReadLine();
+            double num1;
+
+
+            while (!double.TryParse(input1, out num1))
+            {
+                Console.WriteLine("Invalid input. Please enter a valid number: ");
+                input1 = Console.ReadLine();
+            }
+
+            Console.WriteLine("Input the second number: ");
+            string input2 = Console.ReadLine();
+            double num2;
+
+            while (!double.TryParse(input2, out num2))
+            {
+                Console.WriteLine("Invalid input. Please enter a valid number: ");
+                input2 = Console.ReadLine();
+            }
+
+            Console.WriteLine("What do you want to do with those numbers? [A]dd [S]ubtract [M]ultiply ");
+            string choice = Console.ReadLine();
+
+            
+            switch (choice.ToLower())
+            {
+                case "a":
+                    Console.WriteLine($"{num1} + {num2} = {num1 + num2}");
+                    break;
+
+                case "s":
+                    Console.WriteLine($"{num1} - {num2} = {num1 - num2}");
+                    break;
+
+                case "m":
+                    Console.WriteLine($"{num1} * {num2} = {num1 * num2}");
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid option");
+                    break;
+            }
+
+            Console.WriteLine("Press any key to close");
+            Console.ReadKey();
+        }
+    }
+}
